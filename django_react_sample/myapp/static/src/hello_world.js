@@ -1,8 +1,4 @@
-try {
-    var React = require('React');
-} catch (e) {
-
-}
+var React = require('React');
 
 var HelloWorld = React.createClass({
 
@@ -19,7 +15,4 @@ var HelloWorld = React.createClass({
 
 });
 
-try {
-    module.exports = HelloWorld;
-} catch (e) {
-}
+module.exports = HelloWorld;

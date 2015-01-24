@@ -1,8 +1,4 @@
-try {
-    var React = require('React');
-} catch (e) {
-    // client side, no require
-}
+var React = require('React');
 
 var Comment = React.createClass({
 
@@ -23,8 +19,4 @@ var Comment = React.createClass({
 
 });
 
-try {
-    module.exports = Comment;
-} catch (e) {
-    ;
-}
+module.exports = Comment;

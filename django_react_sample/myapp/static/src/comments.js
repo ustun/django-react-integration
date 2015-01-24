@@ -9,7 +9,6 @@ var Comments = React.createClass({
                 return <Comment key={comment.id} id={comment.id} name={comment.name} text={comment.text}/>;
             })}
             </ol>;
-
     }
 
 });

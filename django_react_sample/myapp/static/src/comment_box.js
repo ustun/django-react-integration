@@ -1,8 +1,4 @@
-try {
-    var React = require('React');
-} catch (e) {
-
-}
+var React = require('React');
 
 var CommentBox = React.createClass({
 
@@ -54,8 +50,4 @@ var CommentBox = React.createClass({
 
 });
 
-try {
-    module.exports = CommentBox;
-} catch (e) {
-
-}
+module.exports = CommentBox;
