@@ -15,9 +15,12 @@ var CommentBox = React.createClass({
             return false;
         }
 
-        window.react_ctx_comments.comments.push({id: Math.floor(Math.random()*100000),
+
+        window.react_ctx_comments.comments.push({id: 'TempId_' + Math.floor(Math.random()*100000),
                                                  name: this.state.name, text: this.state.text});
         window.rerenderComments();
+
+        window.Store.submitComment(this.state.name, this.state.text);
 
         this.setState({text: '', name: ''});
         $(this.refs.name.getDOMNode()).focus();

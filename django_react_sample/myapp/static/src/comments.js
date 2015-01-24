@@ -8,7 +8,7 @@ var Comments = React.createClass({
             {this.props.comments.map(function (comment) {
                 return <Comment key={comment.id} id={comment.id} name={comment.name} text={comment.text}/>;
             })}
-            </ol>;
+        </ol>;
     }
 
 });

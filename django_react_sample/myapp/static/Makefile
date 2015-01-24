@@ -1,5 +1,5 @@
 build:
-	npm run build
+	npm run build_serverside | npm run build_clientside 
 
 server:
 	npm run server

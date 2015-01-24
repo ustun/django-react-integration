@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node_modules/react-tools/bin/jsx --watch src build",
+    "build_serverside": "node_modules/react-tools/bin/jsx --watch src build",
+    "build_clientside": "node_modules/webpack/bin/webpack.js --watch",
     "server": "node server/index.js"
   },
   "author": "",

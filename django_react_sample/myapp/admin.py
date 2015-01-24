@@ -3,7 +3,7 @@ from .models import Comment
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text')
+    list_display = ('id', 'name', 'text', 'date_added')
 
     class Meta(object):
         pass

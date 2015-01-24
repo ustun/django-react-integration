@@ -14,9 +14,13 @@
   <h2>Single comment sample</h2>
   <div id="react-container-comment">{{ rendered_comment }}</div>
 
-  <h2>Multiple comments sample</h2>
+  <h2>Multiple comments (fixed data) sample</h2>
+  <div id="react-container-comments-fixed">{{ rendered_comments_fixed }}</div>
+
+  <h2>Multiple comments (real data from db) sample</h2>
   <div id="react-container-comments">{{ rendered_comments }}</div>
 
+  <h2>Comment box</h2>
   <div id="react-container-comment-box"></div>
 
 
@@ -24,9 +28,12 @@
   <script src="{% get_static_prefix %}build/app_webpack.js"></script>
 
 
-<script>
+  <script>
   var react_ctx_comment = {{ react_ctx_comment | json }};
   React.render(React.createFactory(Comment)(react_ctx_comment), document.getElementById('react-container-comment'));
+
+  var react_ctx_comments_fixed = {{ react_ctx_comments_fixed | json }};
+  React.render(React.createFactory(Comments)(react_ctx_comments_fixed), document.getElementById('react-container-comments-fixed'));
 
   var react_ctx_comments = {{ react_ctx_comments | json }};
   React.render(React.createFactory(Comments)(react_ctx_comments), document.getElementById('react-container-comments'));
@@ -37,6 +44,7 @@
   React.render(React.createFactory(HelloWorld)(null), document.getElementById('react-container-hello-world'));
   React.render(React.createFactory(CommentBox)(null), document.getElementById('react-container-comment-box'));
 
+  window.csrftoken = '{{ csrf_token }}';
 
 </script>
 </html>
