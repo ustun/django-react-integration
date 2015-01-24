@@ -17,3 +17,8 @@ dt {
 label {
   display: block;
 }
+
+
+div.top-section {
+  display: inline-block!important;
+}

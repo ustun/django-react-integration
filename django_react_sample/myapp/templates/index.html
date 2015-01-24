@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="{% get_static_prefix %}css/pure.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="{% get_static_prefix %}css/app.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% get_static_prefix %}css/griddle.css" type="text/css" media="screen" />
+
 
   </head>
 
@@ -16,6 +18,10 @@
 
   <h2>Multiple comments (fixed data) sample</h2>
   <div id="react-container-comments-fixed">{{ rendered_comments_fixed }}</div>
+
+  <h2>Multiple comments (fixed data) sample with Griddle</h2>
+  <div id="react-container-comments-fixed-with-griddle">{{ rendered_comments_fixed_with_griddle }}</div>
+
 
   <h2>Multiple comments (real data from db) sample</h2>
   <div id="react-container-comments">{{ rendered_comments }}</div>
@@ -34,6 +40,9 @@
 
   var react_ctx_comments_fixed = {{ react_ctx_comments_fixed | json }};
   React.render(React.createFactory(Comments)(react_ctx_comments_fixed), document.getElementById('react-container-comments-fixed'));
+
+  React.render(React.createFactory(Griddle)({showFilter: true, results: react_ctx_comments_fixed.comments}), document.getElementById('react-container-comments-fixed-with-griddle'));
+
 
   var react_ctx_comments = {{ react_ctx_comments | json }};
   React.render(React.createFactory(Comments)(react_ctx_comments), document.getElementById('react-container-comments'));

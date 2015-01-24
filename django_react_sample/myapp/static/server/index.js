@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-var React = require('React');
+var React = require('react');
+var Griddle = React.createFactory(require('griddle-react'));
 
 var Comment = React.createFactory(require('../build/comment'));
 var Comments = React.createFactory(require('../build/comments'));
@@ -10,7 +11,8 @@ var HelloWorld = React.createFactory(require('../build/hello_world'));
 var Components = {
     Comment: Comment,
     Comments: Comments,
-    HelloWorld: HelloWorld
+    HelloWorld: HelloWorld,
+    Griddle: Griddle
 };
 
 app.get('/', function (req, res) {

@@ -51,8 +51,15 @@ def index(request):
 
     react_ctx_comments_fixed = {'comments': [{'id': 1, 'name': 'Ustun', 'text': 'A sample comment'},
                                              {'id': 2, 'name': 'John', 'text': 'Another comment'},
-                                             {'id': 3, 'name': 'Mary', 'text': 'Yet another comment'}]}
+                                             {'id': 3, 'name': 'Mary', 'text': 'Yet another comment'},
+                                             {'id': 4, 'name': 'Mary', 'text': 'Yet another comment'},
+                                             {'id': 5, 'name': 'Mary', 'text': 'Yet another comment'},
+                                             {'id': 6, 'name': 'Mary', 'text': 'Yet another comment'},
+                                             {'id': 7, 'name': 'Mary', 'text': 'Yet another comment'}]};
     rendered_comments_fixed = render_to_react_string('Comments', react_ctx_comments_fixed)
+    rendered_comments_fixed_with_griddle = render_to_react_string('Griddle', {'showFilter': True,
+                                                                              'results': react_ctx_comments_fixed['comments']})
+
 
     react_ctx_comments = {'comments': get_comments()}
     rendered_comments = render_to_react_string('Comments', react_ctx_comments)
@@ -62,6 +69,7 @@ def index(request):
     ctx = {'rendered_comment': rendered_comment,
            'react_ctx_comment': react_ctx_comment,
            'rendered_comments_fixed': rendered_comments_fixed,
+           'rendered_comments_fixed_with_griddle': rendered_comments_fixed_with_griddle,
            'react_ctx_comments_fixed': react_ctx_comments_fixed,
            'rendered_comments': rendered_comments,
            'react_ctx_comments': react_ctx_comments,
