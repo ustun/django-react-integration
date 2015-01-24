@@ -1,0 +1,5 @@
+.venv
+*.pyc
+node_modules
+.module-cache
+
