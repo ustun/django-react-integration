@@ -1,9 +1,5 @@
-try {
-    var React = require('React');
-    var Comment = require('./Comment');
-} catch (e) {
-
-}
+var React = require('React');
+var Comment = require('./comment');
 
 var Comments = React.createClass({
 
@@ -18,8 +14,4 @@ var Comments = React.createClass({
 
 });
 
-try {
-    module.exports = Comments;
-} catch (e) {
-
-}
+module.exports = Comments;

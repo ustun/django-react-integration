@@ -1,23 +1,8 @@
 {% load static argonauts %}
 <html>
   <head>
-    <style type="text/css" media="screen">
-      body {
-      margin: 20px auto 0 auto;
-      width: 800px;
-      background: lightyellow;
-      font-family: sans-serif;
-      font-size: 14px;
-      }
-
-      div {
-      margin: 20px;
-      cursor: pointer;
-      }
-      dt {
-      display: inline-block;
-      }
-    </style>
+    <link rel="stylesheet" href="{% get_static_prefix %}css/pure.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% get_static_prefix %}css/app.css" type="text/css" media="screen" />
 
   </head>
 
@@ -32,11 +17,11 @@
   <h2>Multiple comments sample</h2>
   <div id="react-container-comments">{{ rendered_comments }}</div>
 
+  <div id="react-container-comment-box"></div>
 
-<script src="{% get_static_prefix %}libs/react.js"></script>
-<script src="{% get_static_prefix %}build/comment.js"></script>
-<script src="{% get_static_prefix %}build/comments.js"></script>
-<script src="{% get_static_prefix %}build/hello_world.js"></script>
+
+  <script src="{% get_static_prefix %}libs/jquery.js"></script>
+  <script src="{% get_static_prefix %}build/app_webpack.js"></script>
 
 
 <script>
@@ -45,7 +30,13 @@
 
   var react_ctx_comments = {{ react_ctx_comments | json }};
   React.render(React.createFactory(Comments)(react_ctx_comments), document.getElementById('react-container-comments'));
+
+  window.rerenderComments = function () {
+     React.render(React.createFactory(Comments)(react_ctx_comments), document.getElementById('react-container-comments'));
+  }
   React.render(React.createFactory(HelloWorld)(null), document.getElementById('react-container-hello-world'));
+  React.render(React.createFactory(CommentBox)(null), document.getElementById('react-container-comment-box'));
+
 
 </script>
 </html>

@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.11.1",
+    "jsx-loader": "^0.12.2",
     "react": "^0.12.2",
     "react-tools": "^0.12.2",
-    "webpack": "^1.5.3"
+    "webpack": "^1.5.3",
+    "whatwg-fetch": "^0.6.1"
   }
 }
