@@ -1,6 +1,8 @@
-from django.conf.urls import include, url, patterns
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
+from django.contrib.staticfiles.views import serve
+from myapp import urls
 
 
 urlpatterns = [
@@ -9,11 +11,9 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('myapp.urls')),
+    url(r'^', include(urls)),
 ]
 
 
 if settings.DEBUG:
-    urlpatterns += patterns('django.contrib.staticfiles.views',
-        url(r'^static/(?P<path>.*)$', 'serve'),
-    )
+    urlpatterns.append(url(r'^static/(?P<path>.*)$', serve))
